@@ -74,9 +74,9 @@ def Test(value):  # Creating a function for the test
 
 Begin_test = (input("Begin test[y/n]:")).lower()
 
-if Begin_test == "y":
+if Begin_test == "y" or Begin_test == "yes":
     Test(data)
-elif Begin_test == "n":
-    print("Are you scared?")
+elif Begin_test == "n" or Begin_test=="no":
+    print("Okay")
 else:
     print("Invalid Parameter")
