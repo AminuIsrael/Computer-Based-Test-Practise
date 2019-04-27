@@ -6,13 +6,13 @@ print("                       Expected time: 10mins")
 print("-----------------------------------------------------------------------\n")
 
 
+class MCQ():  # Creating the object MCQ()
+    def __init__(self, questions, answers):  # Creating object attributes for MCQ()
+        self.questions = questions
+        self.answers = answers
 
-class MCQ(): #Creating the object MCQ()
-     def __init__(self,questions,answers):  #Creating object attributes for MCQ()
-         self.questions = questions
-         self.answers = answers
 
-question = [     #This is a physics multiple choice questions I got from the web
+question = [  # This is a physics multiple choice questions I got from the web
     "\n1. Radiocarbon is produced in the atmosphere as a result of \n (a) collision between fast neutrons and nitrogen nuclei present in the atmosphere\n (b) action of ultraviolet light from the sun on atmospheric oxygen\n (c) action of solar radiations particularly cosmic rays on carbon dioxide present in the atmosphere\n (d) lightning discharge in atmosphere\n",
     "2. It is easier to roll a stone up a sloping road than to lift it vertical upwards because? \n (a) work done in rolling is more than in lifting\n (b) work done in lifting the stone is equal to rolling it\n (c) work done in both is same but the rate of doing work is less in rolling\n (d) work done in rolling a stone is less than in lifting it\n",
     "3. The absorption of ink by blotting paper involves \n (a) viscosity of ink\n (b) capillary action phenomenon\n (c) diffusion of ink through the blotting\n (d) siphon action\n",
@@ -30,29 +30,30 @@ question = [     #This is a physics multiple choice questions I got from the web
     "15.Rectifiers are used to convert \n (a) Direct current to Alternating current\n (b) Alternating current to Direct current\n (c) high voltage to low voltage\n (d) low voltage to high voltage\n",
 
 ]
-data = [MCQ(question[0],"a"),  #Calling the object function and passing it to a list
-         MCQ(question[1],"d"), 
-         MCQ(question[2],"b"),
-         MCQ(question[3],"c"),
-         MCQ(question[4],"b"),
-         MCQ(question[5],"b"),
-         MCQ(question[6],"a"),
-         MCQ(question[7],"c"),
-         MCQ(question[8],"b"),
-         MCQ(question[9],"b"),
-         MCQ(question[10],"d"),
-         MCQ(question[11],"a"),
-         MCQ(question[12],"b"),
-         MCQ(question[13],"b"),
-         MCQ(question[14],"b")
-         ]
+data = [MCQ(question[0], "a"),  # Calling the object function and passing it to a list
+        MCQ(question[1], "d"),
+        MCQ(question[2], "b"),
+        MCQ(question[3], "c"),
+        MCQ(question[4], "b"),
+        MCQ(question[5], "b"),
+        MCQ(question[6], "a"),
+        MCQ(question[7], "c"),
+        MCQ(question[8], "b"),
+        MCQ(question[9], "b"),
+        MCQ(question[10], "d"),
+        MCQ(question[11], "a"),
+        MCQ(question[12], "b"),
+        MCQ(question[13], "b"),
+        MCQ(question[14], "b")
+        ]
 
-def Test(value):  #Creating a function for the test
+
+def Test(value):  # Creating a function for the test
     import time
     score = 0
     time_1 = time.time()
     while time_1 == time.time():
-        for question in value:  #for loop to iterate over the questions
+        for question in value:  # for loop to iterate over the questions
             print(question.questions)
             answer = (input("Choose option (a,b,c,d): ")).lower()
             if answer == question.answers:
@@ -65,7 +66,7 @@ def Test(value):  #Creating a function for the test
                 print(f"The correct option is {question.answers}\n")
         time_spent = time.time() - time_1
         time_spent_tomin = (time_spent/60)
-        time_spent_tomin2dp =  "%.2f" % time_spent_tomin    
+        time_spent_tomin2dp = "%.2f" % time_spent_tomin
     print(f"\nYour Score is {str(score)}/{str(len(data))}")
     print(f"You spent {time_spent_tomin2dp} minutes on the test")
     time.sleep(60*5)
@@ -73,9 +74,9 @@ def Test(value):  #Creating a function for the test
 
 Begin_test = (input("Begin test[y/n]:")).lower()
 
-if Begin_test == "y" or "yes":
+if Begin_test == "y":
     Test(data)
-elif Begin_test == "n" or "no":
+elif Begin_test == "n":
     print("Are you scared?")
 else:
     print("Invalid Parameter")
